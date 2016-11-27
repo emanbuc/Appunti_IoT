@@ -5,7 +5,7 @@ La versione aggiornata dei sorgenti dei testi di queste pagine e del codice è d
 
 Il materiale presente nel repository è stato utilizzato per realizzare un eBook utilizzando i servizi di pubblicazione
 * [GitBook](https://www.gitbook.com/)
-* [LeanPub](https://leanpub.com/)
+* [LeanPub](https://leanpub.com/) - da ottobre 2016 non più disponibile come servizio gratuito
 
 
 Vai al [Sommario](SUMMARY.md)
