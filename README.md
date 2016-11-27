@@ -1,6 +1,6 @@
 # Appunti_IoT
 Raccolta di appunti su progetti IoT
 
-[Sommario](SUMMARY.md)
+[Sommario](./SUMMARY.md)
 
 
