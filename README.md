@@ -1,7 +1,12 @@
-# Appunti_IoT
+# Appunti IoT
 Raccolta di appunti su progetti IoT
 
-La versione aggiornata del testo di queste pagine e del codice sorgente è disponibile sul repository GitHub [Appunti IoT](https://github.com/emanbuc/Appunti_IoT)
+La versione aggiornata dei sorgenti dei testi di queste pagine e del codice è disponibile sul repository GitHub [Appunti IoT](https://github.com/emanbuc/Appunti_IoT)
+
+Il materiale presente nel repository è stato utilizzato per realizzare un eBook utilizzando i servizi di pubblicazione
+* [GitBook](https://www.gitbook.com/)
+* [LeanPub](https://leanpub.com/)
+
 
 Vai al [Sommario](SUMMARY.md)
 
