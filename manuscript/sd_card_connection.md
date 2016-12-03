@@ -3,11 +3,11 @@
 Le memory card SD oltre ad una memoria NAND Flash contengono un microcontrollore che gestisce le comunicaizone verso altri dispositivi. 
 
 {width=50% float=left}
-![alt text](images/sd_card_open_on_square_paper_05.jpg "Interno di una SD Card")
+![Interno di una SD Card](images/sd_card_open_on_square_paper_05.jpg)
 Di Alessio Sbarbaro User_talk:Yoggysot - Opera propria, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=25125222
 
 {width=50% float=left}
-![alt text](images/sd_card_architecture.png "Architettura di una SD card")
+![Architettura di una SD card](images/sd_card_architecture.png)
 Tratta da Trascend TS256M 2GUSD Datasheet
 
 Solitamente le memory card di tipo SD (anche miniSD e microSD) supportano tre diversi protocolli di accesso:
