@@ -2,10 +2,10 @@
 
 Le memory card SD oltre ad una memoria NAND Flash contengono un microcontrollore che gestisce le comunicaizone verso altri dispositivi. 
 
-![alt text](sd_card_open_on_square_paper_05.jpg "Interno di una SD Card")
+![alt text](images/sd_card_open_on_square_paper_05.jpg "Interno di una SD Card")
 Di Alessio Sbarbaro User_talk:Yoggysot - Opera propria, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=25125222
 
-![alt text](sd_card_architecture.png "Architettura di una SD card")
+![alt text](images/sd_card_architecture.png "Architettura di una SD card")
 Tratta da Trascend TS256M 2GUSD Datasheet
 
 Solitamente le memory card di tipo SD (anche miniSD e microSD) supportano tre diversi protocolli di accesso:
@@ -16,9 +16,9 @@ Solitamente le memory card di tipo SD (anche miniSD e microSD) supportano tre di
 
 I diversi protocolli utilizzano gli stessi pin, ma per funzioni diverse.
 
-![alt text](MMC-SD-miniSD-microSD-Color-Numbers-Names.gif "SD Card Pin")
+![alt text](images/MMC-SD-miniSD-microSD-Color-Numbers-Names.gif "SD Card Pin")
 
-![alt text](microsd_card_back_pin.png "Pin nelle due interfacce")
+![alt text](images/microsd_card_back_pin.png "Pin nelle due interfacce")
 
 Solitamente per leggere o scrivere una SD card con un microcontrollore si utilizza la modalità SPI, supportata dalla maggior parte dei microcontrollori e delle SD. Per collegare la SD card al microcontrollore esistono diverse soluzioni:
 
@@ -37,7 +37,7 @@ Nota: I fili non devono essere saldati sulla miniSD/microSD, ma sull'adattore, c
 
 Se si utilizza una board con livello di tensione 3.3V è possibile collegare la SD card direttamente ai pin della porta SPI senza componenti aggiuntivi. Con alcune SD l afase di inizializzaizone potrebbe fallire se non viene messa una resistenza di pull-up sul pin Data Out (DO), corrispondente alla linea MISO del protocollo SPI. 
 
-![alt text](sd_card_spi_connection.png "Connessione diretta")
+![alt text](images/sd_card_spi_connection.png "Connessione diretta")
 
 
 ### Collegamento diretto con MCU a 5V
@@ -48,7 +48,7 @@ Per collegare una SD Card direttamente ad una board a 5V tipo arduino è necessa
 
 Collegamento diretto con partitori di tensione:
 
-![alt text](sd-card-5V-voltage-divider-schema.jpg)
+![alt text](images/sd-card-5V-voltage-divider-schema.jpg)
 source: [Blog arduinodiy](https://arduinodiy.wordpress.com/2012/03/28/sd-card-on-arduino/)
 
 Alcuni suggerimenti:
@@ -67,7 +67,7 @@ Se la SD è connessa direttamente all'alimentazione della MCU, l'inserimento di 
 http://elm-chan.org/docs/mmc/mmc_e.html
 The MMC/SDC can hot insertion/removal but some considerations to the host circuit are needed to avoid an incorrect operation. For example, if the system power supply (Vcc) is tied to the card socket directly, the Vcc will dip at the instant of contact closed due to a charge current to the capacitor that built in the card. 'A' in the right image is the scope view and it shows that occureing a voltage dip of about 600 millivolts. This is a sufficient level to trigger a brown out detector. 'B' in the right image shows that an inductor is inserted to block the surge current, the voltage dip is reduced to 200 millivoits. A low ESR capacitor, such as OS-CON, can eliminate the voltage dip dratiscally like shown in 'C'. However the low ESR capacitor can cause an oscillation of LDO regulator.
 
-![alt text](sd_hot_insert_bod.png)
+![alt text](images/sd_hot_insert_bod.png)
 
 
 # Riferimenti

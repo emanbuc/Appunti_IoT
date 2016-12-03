@@ -14,7 +14,7 @@ A common serial port, the kind with TX and RX lines, is called “asynchronous�
 To work around this problem, asynchronous serial connections add extra start and stop bits to each byte help the receiver sync up to data as it arrives. Both sides must also agree on the transmission speed (such as 9600 bits per second) in advance. Slight differences in the transmission rate aren’t a problem because the receiver re-syncs at the start of each byte.
 
 
-![alt text](async_serial_communication.png "Comunicazione asincrona")
+![alt text](images/async_serial_communication.png "Comunicazione asincrona")
 
 (By the way, if you noticed that “11001010” does not equal 0x53 in the above diagram, kudos to your attention to detail. Serial protocols will often send the least significant bits first, so the smallest bit is on the far left. The lower nybble is actually 0011 = 0x3, and the upper nybble is 0101 = 0x5.)
 
@@ -24,7 +24,7 @@ Asynchronous serial works just fine, but has a lot of overhead in both the extra
 
 SPI works in a slightly different manner. It’s a “synchronous” data bus, which means that it uses separate lines for data and a “clock” that keeps both sides in perfect sync. The clock is an oscillating signal that tells the receiver exactly when to sample the bits on the data line. This could be the rising (low to high) or falling (high to low) edge of the clock signal; the datasheet will specify which one to use. When the receiver detects that edge, it will immediately look at the data line to read the next bit (see the arrows in the below diagram). Because the clock is sent along with the data, specifying the speed isn’t important, although devices will have a top speed at which they can operate (We’ll discuss choosing the proper clock edge and speed in a bit).
 
-![alt text](sync_spi_communication.png "Comunicazione asincrona")
+![alt text](images/sync_spi_communication.png "Comunicazione asincrona")
 
 One reason that SPI is so popular is that the receiving hardware can be a simple shift register. This is a much simpler (and cheaper!) piece of hardware than the full-up UART (Universal Asynchronous Receiver / Transmitter) that asynchronous serial requires.
 

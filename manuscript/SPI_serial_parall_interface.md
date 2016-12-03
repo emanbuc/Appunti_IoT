@@ -11,7 +11,7 @@ In SPI, only one side generates the clock signal (usually called CLK or SCK for 
 
 When data is sent from the master to a slave, it’s sent on a data line called MOSI, for “Master Out / Slave In”. If the slave needs to send a response back to the master, the master will continue to generate a prearranged number of clock cycles, and the slave will put the data onto a third data line called MISO, for “Master In / Slave Out”.
 
-![alt text](spi_bus.png "Protocollo SPI")
+![alt text](images/spi_bus.png "Protocollo SPI")
 
 Notice we said “prearranged” in the above description. Because the master always generates the clock signal, it must know in advance when a slave needs to return data and how much data will be returned. This is very different than asynchronous serial, where random amounts of data can be sent in either direction at any time. In practice this isn’t a problem, as SPI is generally used to talk to sensors that have a very specific command structure. For example, if you send the command for “read data” to a device, you know that the device will always send you, for example, two bytes in return. (In cases where you might want to return a variable amount of data, you could always return one or two bytes specifying the length of the data and then have the master retrieve the full amount.)
 
@@ -21,7 +21,7 @@ Note that SPI is “full duplex” (has separate send and receive lines), and, t
 
 There’s one last line you should be aware of, called SS for Slave Select. This tells the slave that it should wake up and receive / send data and is also used when multiple slaves are present to select the one you’d like to talk to.
 
-![alt text](sync_spi_communication_with_slave_selection.png "Protocollo SPI con Slave Selection")
+![alt text](images/sync_spi_communication_with_slave_selection.png "Protocollo SPI con Slave Selection")
 
 The SS line is normally held high, which disconnects the slave from the SPI bus. (This type of logic is known as “active low,” and you’ll often see used it for enable and reset lines.) Just before data is sent to the slave, the line is brought low, which activates the slave. When you’re done using the slave, the line is made high again. In a shift register, this corresponds to the “latch” input, which transfers the received data to the output lines.
 
@@ -31,11 +31,11 @@ There are two ways of connecting multiple slaves to an SPI bus:
 
 In general, each slave will need a separate SS line. To talk to a particular slave, you’ll make that slave’s SS line low and keep the rest of them high (you don’t want two slaves activated at the same time, or they may both try to talk on the same MISO line resulting in garbled data). Lots of slaves will require lots of SS lines; if you’re running low on outputs, there are binary decoder chips that can multiply your SS outputs.
 
-![alt text](SPI_multiple_SS_line.png "Multiple Slave Selection Line")
+![alt text](images/SPI_multiple_SS_line.png "Multiple Slave Selection Line")
 
 On the other hand, some parts prefer to be daisy-chained together, with the MISO (output) of one going to the MOSI (input) of the next. In this case, a single SS line goes to all the slaves. Once all the data is sent, the SS line is raised, which causes all the chips to be activated simultaneously. This is often used for daisy-chained shift registers and addressable LED drivers.
 
-![alt text](spi_daisy_chain_slave.png "Daisy Chain Slave")
+![alt text](images/spi_daisy_chain_slave.png "Daisy Chain Slave")
 
 Note that, for this layout, data overflows from one slave to the next, so to send data to any one slave, you’ll need to transmit enough data to reach all of them. Also, keep in mind that the first piece of data you transmit will end up in the last slave.
 
