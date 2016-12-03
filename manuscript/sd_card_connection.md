@@ -20,7 +20,7 @@ I diversi protocolli utilizzano gli stessi pin, ma per funzioni diverse.
 
 ![alt text](images/MMC-SD-miniSD-microSD-Color-Numbers-Names.gif "SD Card Pin")
 
-![alt text](images/microsd_card_back_pin.png "Pin nelle due interfacce")
+![alt text](images/microsd_back_pin.png "Pin nelle due interfacce")
 
 Solitamente per leggere o scrivere una SD card con un microcontrollore si utilizza la modalità SPI, supportata dalla maggior parte dei microcontrollori e delle SD. Per collegare la SD card al microcontrollore esistono diverse soluzioni:
 
