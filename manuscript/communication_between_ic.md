@@ -1,6 +1,10 @@
 # Comunicazioni tra circuiti integrati
 
+TBC
+
 ## Comunicazione Sincrona ed Asincrona
+
+TBC
 
 ### Comunicazione asincrona su porta seriale UART
 Source: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi 
@@ -24,5 +28,13 @@ SPI works in a slightly different manner. It’s a “synchronous” data bus, w
 
 One reason that SPI is so popular is that the receiving hardware can be a simple shift register. This is a much simpler (and cheaper!) piece of hardware than the full-up UART (Universal Asynchronous Receiver / Transmitter) that asynchronous serial requires.
 
- [I2C](manuscript/I2C.md)
- [SPI](manuscript/SPI.md)
+## Common Communication Port and Protocols
+
+Below a list of communication port and protocol commonly used in microcontroller and embedded system
+
+ * [UART](manuscript/UART_universal_asynchronous_receiver_transmitter.md)
+ * [I2C](manuscript/I2C_inter_integrated_circuit.md)
+ * [SPI](manuscript/SPI_serial_parall_interface.md)
+
+ * [PDM](manuscript/PDM_pulse_density_modulation.md)
+ * [I2S](manuscript/I2S_inter_ic_sound.md)
