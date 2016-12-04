@@ -22,6 +22,9 @@ Il bus SPI presenta le seguenti caratteristiche:
 ## Applicazioni
 Questo sistema di comunicazione di solito serve per lo scambio di dati tra dispositivi montati "sulla stessa scheda elettronica" (o comunque tra schede elettroniche vicine tra di loro) in quanto non prevede particolari accorgimenti hardware per trasferire informazioni tra dispositivi lontani connessi con cavi soggetti a disturbi.
 
+Grazie alla semplictà di implementazione, il bus SPI è supportato da moltissimi dispositivi integrati. Rispetto al bus I2C, SPI richiede un numeor maggiore di linee, ma permette di raggiungere velocità di trasferimento maggiori (fino a 50 volte più veloce di I2C) ed è quindi preferito quando è necessario trasferire velocemente grandi quantità di dati. Ad esempio ADC, DAC e IC di comunicazione.
+
+
 ## Invio e Ricezione dei dati
 La trasmissione avviene tra un dispositivo detto master e uno o più slave (letteralmente dall'inglese padrone e schiavo). Il master controlla il bus, emette il segnale di clock, decide quando iniziare e terminare la comunicazione. 
 Un solo dispositivo può essere attivo sul bus con ruolo di mater, ma tutti i dispositivi collegati possono, in momenti diversi, assumere il ruolo di master. Il dispositivo master è quello che genera il clock.
@@ -67,6 +70,16 @@ On the other hand, some parts prefer to be daisy-chained together, with the MISO
 Note that, for this layout, data overflows from one slave to the next, so to send data to any one slave, you’ll need to transmit enough data to reach all of them. Also, keep in mind that the first piece of data you transmit will end up in the last slave.
 
 This type of layout is typically used in output-only situations, such as driving LEDs where you don’t need to receive any data back. In these cases you can leave the master’s MISO line disconnected. However, if data does need to be returned to the master, you can do this by closing the daisy-chain loop (blue wire in the above diagram). Note that if you do this, the return data from slave 1 will need to pass through all the slaves before getting back to the master, so be sure to send enough receive commands to get the data you need.
+
+### Operation Mode
+SPI prevedede quattro "operation mode" e solitamente il dispositivo master adatta l'interfaccia alla modalità operativa supportata dal dispositivo slave.
+
+TBC
+
+In SPI, data shift and data latch are done opposite clock edges respectively. There is an advantage that when shift and latch operations are separated, critical timing between two operations can be avoided. Therfore timing consideration for IC design and board design can be relieved. But on the other hand there are four operation modes due to combination of clock polarity and clock phase, master IC must configure its SPI interface as an SPI mode that slave IC required.
+
+
+http://elm-chan.org/docs/spi_e.html
 
 ## Using SPI
 source: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi
