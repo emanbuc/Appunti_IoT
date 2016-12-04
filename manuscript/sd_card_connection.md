@@ -20,8 +20,6 @@ I diversi protocolli utilizzano gli stessi pin, ma per funzioni diverse.
 
 ![alt text](images/MMC-SD-miniSD-microSD-Color-Numbers-Names.gif "SD Card Pin")
 
-![alt text](images/microsd_back_pin.png "Pin nelle due interfacce")
-
 Solitamente per leggere o scrivere una SD card con un microcontrollore si utilizza la modalità SPI, supportata dalla maggior parte dei microcontrollori e delle SD. Per collegare la SD card al microcontrollore esistono diverse soluzioni:
 
 - utilizzare uno slot SD(MiniSD/MicroSD)
@@ -75,8 +73,9 @@ The MMC/SDC can hot insertion/removal but some considerations to the host circui
 # Riferimenti
 
 [Wikipedia IT Secure Digital](https://it.wikipedia.org/wiki/Secure_Digital)
+
 Trascend TS256M 2GUSD Datasheet
 
-[How to Use MMC/SDC(]http://elm-chan.org/docs/mmc/mmc_e.html)
+[How to Use MMC/SDC](http://elm-chan.org/docs/mmc/mmc_e.html)
 
 
