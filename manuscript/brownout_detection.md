@@ -1,4 +1,4 @@
-# Brownout Detection
+# Brownout
 
 Si berifica un brownout quando la tensione cala, ma l'alimetazione non viene interrotta del tutto (blackout). Il nome deriva dall'effetto che l'abbassamento di tensione determina sulle lampade ad incandescenza.
 
