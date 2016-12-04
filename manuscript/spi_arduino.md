@@ -1,5 +1,9 @@
 # Using SPI with Arduino
 
+source: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi
+
+TBC
+
 If you’re using an Arduino, there are two ways you can communicate with SPI devices:
 
 You can use the shiftIn() and shiftOut() commands. These are software-based commands that will work on any group of pins, but will be somewhat slow.
