@@ -1,13 +1,40 @@
 # SPI
 
-## Origini
-It seems the Serial Peripheral Protocol (SPI) was first introduced with the first microcontroller deriving from the same architecture as the popular Motorola 68000 microprocessor, announced in 1979. SPI defined the external microcontroller bus, used to connect the microcontroller peripherals with 4 wires. Unlike I²C, it is hard to find a formal separate ‘specification’ of the SPI bus – for a detailed ‘official’ description, one has to read the microcontrollers data sheets and associated application notes.
-
-##Send and Receive Data
+source: https://it.wikipedia.org/wiki/Serial_Peripheral_Interface
 
 source: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi
 
-In SPI, only one side generates the clock signal (usually called CLK or SCK for Serial ClocK). The side that generates the clock is called the “master”, and the other side is called the “slave”. There is always only one master (which is almost always your microcontroller), but there can be multiple slaves (more on this in a bit).
+Il Serial Peripheral Interface o SPI (pronuncia: ɛs pi aɪ o spaɪ) è un sistema di comunicazione tra un microcontrollore e altri circuiti integrati o tra più microcontrollori.
+
+È un bus standard di comunicazione ideato dalla Motorola e sviluppato, in una sua variante, anche dalla National Semiconductor con il nome di bus Microwire (TM).
+
+Il bus SPI presenta le seguenti caratteristiche:
+
+* comunicazione di tipo seriale
+* comunicazione sincrona per la presenza di un clock che coordina la trasmissione e ricezione dei singoli bit e determina la velocità di trasmissione
+* full-duplex in quanto il "colloquio" può avvenire contemporaneamente in trasmissione e ricezione.
+* velocità minima non definita a livello di specifiche
+* velocità meassima determinata dalle caratteristiche dei dispostivi coinvolti nella comunicazione
+* utilizza quattro fili per i segnali più riferimento di terra (ground) comune tra i dispositivi connessi.
+
+![SPI con due dispositivi connessi - https://commons.wikimedia.org/wiki/File:SPI_single_slave.svg](SPI_single_slave.svg)
+
+## Applicazioni
+Questo sistema di comunicazione di solito serve per lo scambio di dati tra dispositivi montati "sulla stessa scheda elettronica" (o comunque tra schede elettroniche vicine tra di loro) in quanto non prevede particolari accorgimenti hardware per trasferire informazioni tra dispositivi lontani connessi con cavi soggetti a disturbi.
+
+## Invio e Ricezione dei dati
+La trasmissione avviene tra un dispositivo detto master e uno o più slave (letteralmente dall'inglese padrone e schiavo). Il master controlla il bus, emette il segnale di clock, decide quando iniziare e terminare la comunicazione. 
+Un solo dispositivo può essere attivo sul bus con ruolo di mater, ma tutti i dispositivi collegati possono, in momenti diversi, assumere il ruolo di master. Il dispositivo master è quello che genera il clock.
+
+Il protocollo utilizza 4 segnali che possono essere indicati con nomi diversi a seconda del produttore del dispositivo.
+
+* **SCLK - SCK**: Serial Clock (emesso dal master)
+* **SDI – MISO – SOMI – DI - SO**: Serial Data Input, Master Input Slave Output (ingresso per il master ed uscita per lo slave)
+* **SDO – MOSI – SIMO – DO – SI**: Serial Data Output, Master Output Slave Input (uscita dal master)
+* **CS – SS – nCS – nSS – STE**: Chip Select, Slave Select, emesso dal master per scegliere con quale dispositivo slave vuole comunicare. Il dispositivo selezionato è quello con linea CS a livello basso.
+
+Il protocollo è "full-duplex": le linee per inviare comandi e ricevere dati sono separate ed è ad esempio possibile richiedere una nuova lettura da un sensore mentre si riceve il risultato della lettura precedente.
+
 
 When data is sent from the master to a slave, it’s sent on a data line called MOSI, for “Master Out / Slave In”. If the slave needs to send a response back to the master, the master will continue to generate a prearranged number of clock cycles, and the slave will put the data onto a third data line called MISO, for “Master In / Slave Out”.
 
