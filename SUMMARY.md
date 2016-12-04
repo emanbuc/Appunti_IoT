@@ -5,6 +5,7 @@
 * [Chapter2](manuscript/chapter2.md)
 * [Communication Between IC](manuscript/communication_between_ic.md)
    * [SPI Serial Parallel Interface](manuscript/SPI_serial_parallel_interface.md)
+       * SPI_arduino
    * [UART Serial](manuscript/UART_universal_asynchronous_receiver_transmitter.md)
 * [SD Card Connection](manuscript/sd_card_connection.md)
    * [ESP8266 SD Card SPI](manuscript/ESP8266_sd_card_spi.md)
