@@ -17,6 +17,12 @@ The ESP8266 datasheet reports that there are two hardware SPI ports named SPI an
 |MTMS |GPIO14|CLOCK|
 |MTDO |GPIO15|CS / SS |
 
+Pin Name in the table are the one given in the datasheet. These names are pretty confusing! 
+* MTCK is NOT the clock for the HSPI, but the DataOut line.
+* MTDO (data out) pin. it's actually the HSPI Chip Select line
+
+*Note: some ESP module don't break out all required PIN. In order to use HSPI posrt you must use a module like ESP-12 with all pins exposed.*
+
 In ArduinoCore libraries the SPI pin are defined accoridng to the table below and hooked to the HSPI port in https://github.com/esp8266/Arduino/blob/master/variants/generic/common.h 
 
 ``` 
@@ -25,12 +31,15 @@ In ArduinoCore libraries the SPI pin are defined accoridng to the table below an
 #define PIN_SPI_MISO (12)
 #define PIN_SPI_SCK  (14)
 ```
-SPI library use the pin definition above, but allow the  a different GPIO to be passed to the objects for CS/SS line. This can be used to arrange a multi-slave configuration.
+SPI library use the pin definition above, but allow the  a different GPIO to be passed during initializzation phase (see SD card code).
 
-## SPI port in ESP Module and DevBoard
-
-### NodeMCU
+## GPIO15 Wiring
 TBC
+
+GPIO15 needs to be tied to GND when booting from the onboard SPI flash (see ESP8266 boot mode). In order to use this pin as chip select you can not connect directly to the groud, but you must use a pull down resistor.
+(see ESP8266 schematics).
+
+
 
 
 
