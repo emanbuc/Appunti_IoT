@@ -84,6 +84,7 @@ http://elm-chan.org/docs/spi_e.html
 ## Using SPI
 source: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi
 
+TBC
 
 Many microcontrollers have built-in SPI peripherals that handle all the details of sending and receiving data, and can do so at very high speeds. The SPI protocol is also simple enough that you (yes, you!) can write your own routines to manipulate the I/O lines in the proper sequence to transfer data. (A good example is on the Wikipedia SPI page.)
 
