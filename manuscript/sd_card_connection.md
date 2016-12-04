@@ -59,7 +59,7 @@ Alcuni suggerimenti:
 - verificare sul datasheet della sheda SD che la corrente fornita sia sufficiente. Alcune schede sono in grado di fornire solo poche decine di milliampere sull'alimentazione a 3.3V, che potrebbero non essere sufficienti per tutte le schede SD.
 
 ## Inserimento ed estrazione "a caldo"
-Se l'applicaizone prevede la possibilità estrarre o inserire la scheda SD "a caldo" durante il funzionamento è necessario inserire delle resistenze di pull-up/pull-down per evitare che le linee possano assumere valori fluttuanti fuori controllo.
+Se l'applicazione prevede la possibilità estrarre o inserire la scheda SD "a caldo" durante il funzionamento è necessario inserire delle resistenze di pull-up/pull-down per evitare che le linee possano assumere valori fluttuanti fuori controllo.
 
 Le linee DataIN e DataOut sono in stato normalmente alto e quindi le specifiche SD/MMC prevedono delle resistenze  di pull-up di valore compreso tra 50K e 100K homs According to SDC/MMC specs, from 50k to 100k ohms.
 Il segnale di clock non è menzionato nelle specifiche, ma se esiste la possibilità che il pin sia in stato "floating" è opportuno inserire una resistenza di pull-down
