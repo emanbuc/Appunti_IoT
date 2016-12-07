@@ -10,6 +10,4 @@ Il materiale presente nel repository è utilizzato per realizzare un eBook utili
 * [Kindle Direct Publishing](https://kdp.amazon.com/)
 
 
-Vai al [Sommario](SUMMARY.md)
-
 
