@@ -69,7 +69,4 @@ Strumentazione, componenti, surplus civile e militare.
 
 Italia , Roma -[http://www.electronicsurplus.it/](http://www.electronicsurplus.it/)
 
-## 
-
-
 
